@@ -1,0 +1,10 @@
+[{"category": "electricidad" ,"id":1,"title":"Termica","price":"$9.37","img": "www.luzdesing.com.ar/productos/llave-termica-bipolar-2x6a10a16a20a25a32a-luz-desing/10655","stock":10},
+{"category": "electricidad" ,"id":2,"title":"Cable Unipolar","price":"$9.26","img":"http://dummyimage.com/222x.png/ff4444/ffffff","stock":10},
+{"category": "electricidad" ,"id":3,"title":"Cable subterraneo","price":"$1.80","img":"http://dummyimage.com/228x.png/5fa2dd/ffffff","stock":10},
+{"category": "iluminacion" ,"id":4,"title":"Velador","price":"$2.11","img":"http://dummyimage.com/208x.png/cc0000/ffffff","stock":10},
+{"category": "herramientas" ,"id":5,"title":"Martillo","price":"$4.20","img":"http://dummyimage.com/241x.png/5fa2dd/ffffff","stock":10},
+{"category": "herramientas" ,"id":6,"title":"Taladro Inalambrico","price":"$6.29","img":"http://dummyimage.com/236x.png/5fa2dd/ffffff","stock":10},
+{"category": "herramientas" ,"id":7,"title":"Amoladora","price":"$1.48","img":"http://dummyimage.com/238x.png/ff4444/ffffff","stock":10},
+{"category": "electricidad" ,"id":8,"title":"Diferencial","price":"$0.38","img":"http://dummyimage.com/222x.png/5fa2dd/ffffff","stock":10},
+{"category": "electricidad" ,"id":9,"title":"Protector Din","price":"$2.66","img":"http://dummyimage.com/241x.png/5fa2dd/ffffff","stock":10},
+{"category": "iluminacion" ,"id":10,"title":"Lampara","price":"$7.16","img":"http://dummyimage.com/245x.png/dddddd/000000","stock":10}]
