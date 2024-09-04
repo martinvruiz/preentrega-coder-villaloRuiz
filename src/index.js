@@ -6,6 +6,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import ItemDetailContainer from "./components/ItemListContainer/components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Nosotros from "./pages/Nosotros";
+import { Home } from "./pages/Home";
 
 const el = document.getElementById("root");
 
@@ -20,7 +21,7 @@ function App(){
         
         <Routes>
 
-            <Route path="/" element={<ItemListContainer/>}></Route>
+            <Route path="/" element={<Home/>}></Route>
             <Route path=":category" element={<ItemListContainer/>}></Route>
             <Route path="item/:id" element={<ItemDetailContainer/> }></Route>
             <Route path=":category/item/:id" element={<ItemDetailContainer/> }></Route>

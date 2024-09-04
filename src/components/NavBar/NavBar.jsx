@@ -4,7 +4,7 @@ import { CartWidget } from "./components/CartWidget/CartWidget"
 export const NavBar = ()=>{
 
     return <>
-        <nav className="flex items-center justify-center bg-cyan-700 h-14">
+        <nav className="flex items-center justify-center bg-cyan-700 h-14 border-b-2 border-b-black">
             <ul className="flex justify-center justify-items-center text-white h-full items-center">
                 <li className="mx-6">
                     <Link className="font-bold text-xl" to="/">Proelec</Link>
