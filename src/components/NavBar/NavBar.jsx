@@ -10,13 +10,13 @@ export const NavBar = ()=>{
                     <Link className="font-bold text-xl" to="/">Proelec</Link>
                 </li>
                 <li className="mx-6">
-                    <Link to="/products/electricidad">Electricidad</Link>
+                    <Link to="/electricidad">Electricidad</Link>
                 </li>
                 <li className="mx-6">
-                    <Link to="/products/iluminacion">Iluminacion</Link>
+                    <Link to="/iluminacion">Iluminacion</Link>
                 </li>
                 <li className="mx-6">
-                    <Link to="/products/herramientas">Herramientas</Link>
+                    <Link to="/herramientas">Herramientas</Link>
                 </li>
                 <li className="mx-6">
                     <Link to="/us">Nosotros</Link>

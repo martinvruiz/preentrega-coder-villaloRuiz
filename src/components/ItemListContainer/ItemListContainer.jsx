@@ -20,7 +20,10 @@ export const ItemListContainer = ({titulo})=>{
             setTitle("Bienvenido/as")
         }
         })
-    })
+        .catch((error) => {
+            console.error("Error al cargar los productos:", error);
+        })
+    },[pdCategory])
 
 
     return <>

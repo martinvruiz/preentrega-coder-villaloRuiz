@@ -10,6 +10,7 @@ export const ItemList= ({products, title})=>{
         {products.map((product)=>{
                 return <Item
                     key={product.title}
+                    category={product.category}
                     id={product.id}
                     title={product.title}
                     price={product.price}
