@@ -13,9 +13,18 @@ export const CartProvider = ({children})=>{
         const DuplicateProd = cart.find((product)=> product.id === ProdAdd.id)
 
         if(DuplicateProd){
-            DuplicateProd.ItemNumber += ItemNumber
+            const updateNumber = DuplicateProd.ItemNumber + ItemNumber
+            if(updateNumber > product.stock){
+                alert("No hay mas stock disponible :(")
+                return
+            }
+            DuplicateProd.ItemNumber = updateNumber
             setCart(NewCart)
         }else{
+            if(ItemNumber > product.stock){
+                alert("No hay mas stock disponible :(")
+                return
+            }
             NewCart.push(ProdAdd)
             setCart(NewCart)
         }
