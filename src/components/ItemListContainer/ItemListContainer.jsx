@@ -1,33 +1,39 @@
 import { useEffect, useState } from "react"
-import { productList } from "./components/productList/productList"
 import { ItemList } from "./components/ItemList/ItemList"
 import { useParams } from "react-router-dom"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../../firebase/firebase"
+import { Capitals } from "../../Capitals/Capitals"
 
 
-export const ItemListContainer = ({titulo})=>{
-    let [products, setProducts] = useState([])
-    const [title, setTitle] = useState("Bienvenidos")
-    const pdCategory = useParams().category
-
-    useEffect(()=>{
-    productList()
-        .then((res)=>{
-            if(pdCategory){
-                setProducts(res.filter((prod)=> prod.category === pdCategory))
-                setTitle(pdCategory)
-            }else{
-            setProducts(res)
-            setTitle("Bienvenido/as")
+export const ItemListContainer = () => {
+    const [products, setProducts] = useState([]);
+    const [pageTitle, setPageTitle] = useState();
+    const { category: pdCategory } = useParams();
+  
+    useEffect(() => {
+      const getProducts = async () => {
+        let prodQuery = collection(db, "productList");
+  
+        if (pdCategory) {
+          prodQuery = query(prodQuery, where("category", "==", pdCategory));
         }
-        })
-        .catch((error) => {
-            console.error("Error al cargar los productos:", error);
-        })
-    },[pdCategory])
+  
+        try {
+          const querySnapshot = await getDocs(prodQuery);
+          setProducts(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+          setPageTitle(Capitals(pdCategory));
+        } catch (error) {
+          console.error("Error getting products:", error);
+        }
+      };
+  
+      getProducts();
+    }, [pdCategory]);
 
 
     return <>
-        <ItemList title={title} products={products}/>
+        <ItemList title={pageTitle} products={products}/>
     </>
 
 }

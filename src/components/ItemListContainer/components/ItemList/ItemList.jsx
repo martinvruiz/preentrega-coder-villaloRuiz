@@ -1,11 +1,11 @@
 
 import { Item } from "../Item/Item"
-import { Capitals } from "../../../../Capitals/Capitals"
+
 
 
 export const ItemList= ({products, title})=>{
     return <section className="flex flex-col justify-center items-center">
-        <h3 className="text-2xl font-extrabold my-6">{Capitals(title)}</h3>
+        <h3 className="text-2xl font-extrabold my-2">{title}</h3>
         <div className="flex flex-wrap justify-center my-6">
         {products.map((product)=>{
                 return <Item
