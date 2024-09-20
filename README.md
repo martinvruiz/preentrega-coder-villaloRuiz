@@ -24,4 +24,4 @@ Esta aplicacion se pudo realizar gracias a la explicacion de los profesores y tu
 Espero que nos volvamos a encontrar en algun futuro como colegas, saludos!
 
 
-![gifProelec] (/src/images/gif3.gif)
+![gifProelec](/src/images/gifproelec2.gif)
