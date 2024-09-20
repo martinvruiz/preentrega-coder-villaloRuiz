@@ -6,6 +6,8 @@ import { collection, getFirestore, addDoc,} from "firebase/firestore"
 export const Cart = ()=>{
     const {cart, TotalPrice, DeleteCart, DeleteItem} = useContext(CartContext)
 
+    const [orderId, setOrderId] = useState("")
+
     const handleDelete = ()=>{
         DeleteCart()
     }
@@ -46,7 +48,7 @@ export const Cart = ()=>{
             date : new Date()
         }
         addDoc(orderCollection, purchase)
-        .then(res => console.log(res.id))
+        .then(res => setOrderId(res.id))
         .catch(err => console.log(err))
     }
 
@@ -65,6 +67,11 @@ export const Cart = ()=>{
             setOrder()
             alert("Compra exitosa! te contactaremos por mail para poder completar la orden")
             handleDelete()
+            setBuyer({
+                nombre : "",
+                email : "",
+                telefono : "",
+            })
         }else{
             setError(userError)
         }
@@ -78,6 +85,7 @@ export const Cart = ()=>{
         <h2 className="mt-4 text-4xl font-bold">Carrito de compras</h2>
 
         {
+            
             cart.map((prod)=>{
                 return <div className="mt-3 flex w-3/4 h-auto items-center justify-between" key={prod.id}>
                     <img className="w-20 border border-black" src={prod.img} alt="" />
@@ -89,11 +97,20 @@ export const Cart = ()=>{
 
             })
         }
+        {
+            cart.length <= 0 && <>
+                <p className="mt-6 text-xl font-bold text-">Tu carrito de compras esta vacio :c</p>
+            </>
+        }
         { cart.length > 0 && <>
         <Form submitOrder={submitOrder} handlechange={handleChange} formData={buyer} error={error}/>
         <p className="mt-4 font-semibold">Total del carrito: ${TotalPrice()}</p>
         <button className="bg-cyan-950 w-1/5 h-9 mt-2 border rounded-xl border-cyan-700 text-white" onClick={handleDelete}>Vaciar carrito</button>
+
         </>
+        }
+        {
+            orderId && <p className="mt-5 text-lg font-xl">Gracias por tu compra! Tu orden es {orderId}</p>
         }   
     </div>
 }

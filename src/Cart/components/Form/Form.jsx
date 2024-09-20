@@ -8,7 +8,7 @@ export const Form = ({submitOrder, handlechange, formData, error})=>{
             Object.keys(formData).map((key, i)=>{
                 return<div className="flex flex-col text-center">
                     <label htmlFor={key}>Ingrese {key}</label>
-                    <input className="border border-cyan-700 rounded-md my-2" type="text" name={key} id={key} onChange={handlechange} />
+                    <input className="border border-cyan-700 rounded-md my-2" type="text" name={key} id={key} value={formData[key]} onChange={handlechange} />
                     {
                         error[key] && <span className="text-red-600">{error[key]};</span>
                     }
