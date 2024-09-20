@@ -22,3 +22,6 @@ Para poder desarrollar este ecommerce se usaron librerias como:
 Esta aplicacion se pudo realizar gracias a la explicacion de los profesores y tutores del curso de React.js de Coderhouse. Muchas gracias por las explicaciones y la ayuda que nos dieron durante este recorrido.
 
 Espero que nos volvamos a encontrar en algun futuro como colegas, saludos!
+
+
+![gifProelec] (/src/images/gif3.gif)
