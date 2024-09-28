@@ -24,4 +24,9 @@ Esta aplicacion se pudo realizar gracias a la explicacion de los profesores y tu
 Espero que nos volvamos a encontrar en algun futuro como colegas, saludos!
 
 
+## Link Netlify
+
+https://proelecweb.netlify.app/
+
+
 ![gifProelec](/src/images/gifproelec2.gif)
